@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block title %} History {% endblock %}
+{% block main %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="text-start">Symbol</th>
+      <th class="text-start">Shares</th>
+      <th class="text-end">Price</th>
+      <th class="text-end">Type of transaction</th>
+      <th class="text-end">Transacted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for values in history %}
+    <tr>
+        <td class="text-start" scope = "row">{{ values["symbol"] }}</td>
+        <td class="text-start">{{values["shares"]}}</td>
+        <td class="text-end">{{values["price"]}}</td>
+        <td class="text-end">{{values["TYPE"]}}</td>
+        <td class="text-end">{{values["time"]}}</td>
+    </tr>
+
+    {% endfor %}
+
+
+{% endblock %}
